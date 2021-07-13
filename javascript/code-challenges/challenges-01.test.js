@@ -69,7 +69,6 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {  
   let newGreeting = word.toUpperCase() + '!';
-
   // Solution code here...
   return newGreeting;
 };
