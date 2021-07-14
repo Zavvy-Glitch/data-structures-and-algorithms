@@ -64,6 +64,7 @@ const forLoopTwoToThe = (arr) => {
   });
 
   return newArray;
+
   // => over array and returns new array
   // returned array should use Math.pow(2, n)
   // Solution code here...
@@ -78,10 +79,10 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-   let newArray = [];
-   arr.forEach(nums => newArray.push(Math.pow(2, nums)));
+  let newArray = [];
+  arr.forEach(nums => newArray.push(Math.pow(2, nums)));
 
-   return newArray;
+  return newArray;
   // Solution code here...
 };
 
