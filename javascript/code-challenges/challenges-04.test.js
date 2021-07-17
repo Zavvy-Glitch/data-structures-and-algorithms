@@ -107,17 +107,9 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
-  let newArray = [];
-
-  arr.sort((a, b) => {
-    if (a < b) {
-      newArray.push(a);
-    } else {
-      newArray.push(b);
-    }
-  });
-  return newArray;
+arr.sort((a,b)=>)
 };
+
 // stuck here
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
