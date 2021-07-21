@@ -103,10 +103,12 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  addValues.forEach(arr, value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
