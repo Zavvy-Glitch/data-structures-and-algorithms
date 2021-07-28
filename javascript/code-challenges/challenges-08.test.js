@@ -56,7 +56,18 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  charArray.sort((a,b) => {
+    if (a.children.length === b.children.length) {
+      return (a.house - b.house);
+    } else if (a.children.length < b.children.length) {
+      return (a.children.length - b.children.length);
+    } else {
+      return 0;
+    }
+  });
+  return(charArray);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -66,6 +77,8 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
+  const regex = /w/g;
+  return(regex.test(str));
   // Solution code here...
 };
 
@@ -83,6 +96,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  const regex = /0-9/g;
+  return(regex.test(input));
 };
 
 /* ------------------------------------------------------------------------------------------------
