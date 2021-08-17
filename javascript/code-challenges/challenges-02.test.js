@@ -18,7 +18,7 @@ const raisedToTheThird = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
+Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
@@ -93,13 +93,10 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  let newArray = [];
-  newArray = arr.map( function(num){
+  return arr.map( function(num){
     return Math.pow(2, num);
 
   });
-
-  return newArray;
   // Solution code here...
 };
 
@@ -114,13 +111,11 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  let string = [];
-  string = arr.map( function(letter, i){
+  return arr.map( function(letter){
     return letter.charCodeAt(0);
 
   });
 
-  return string;
   // Solution code here...
 };
 
@@ -135,8 +130,19 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  return arr.map( function(element){
+    if(element % 2 === 0){
+      return('even');
+    }else if(typeof element !== 'number'){
+      return('N/A');
+    } else{
+      return('odd');
+    }
+  }
+  );
 };
+  // Solution code here...
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -181,6 +187,7 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
+  return arr.map()
   // Solution code here...
 };
 
@@ -300,7 +307,7 @@ describe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
