@@ -24,9 +24,8 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  let nums = arr.filter(n => typeof n === 'number');
+  return arr.filter(n => typeof n === 'number');
   //( => implied if statement)
-  return nums;
   // Solution code here...
 };
 
@@ -39,8 +38,7 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  let filtering = arr.filter((val) => val.includes('and'));
-  return filtering;
+  return arr.filter((val) => val.includes('and'));
   // Solution code here...
 };
 
@@ -53,8 +51,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  let odds = arr.filter((odd) => odd%2);
-  return odds;
+  return arr.filter((odd) => odd%2);
   // Solution code here...
 };
 
@@ -67,8 +64,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  let filters = arr.filter((val) => !forbiddenValues.includes(val));
-  return filters;
+  return arr.filter((val) => !forbiddenValues.includes(val));
   // Solution code here...
 };
 
@@ -113,7 +109,9 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter((val => minBaseStat < val.baseStat));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -123,10 +121,16 @@ Write a function named getStatName that is an extension of your getBaseStatGreat
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
 
-const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
-};
+// const getStatName = (arr, minBaseStat) => {
+//   // Solution code here...
+//   let names = arr.filter((val => minBaseStat < val.baseStat));
+//   let newArray = names.map(val => {
+//     return (val.stat.name);
+//   });
+//   return newArray;
+// };
 
+const getStatName = (arr, minBaseStat) => arr.filter(val => minBaseStat < val.baseStat).map(val => val.stat.name);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -178,6 +182,7 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -260,7 +265,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
@@ -271,7 +276,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
