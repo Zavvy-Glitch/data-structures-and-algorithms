@@ -13,9 +13,8 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
 //function with an array of people objects above
-  let nameArr = people.map((person, idx) => person.firstName + ' ' + person.lastName);
+  return people.map((person, idx) => person.firstName + ' ' + person.lastName);
 
-  return nameArr;
 //create new list of each persons full name with map
 //each object has a firstName and lastName
 //should combine firstName and lastName together
@@ -31,11 +30,8 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
-  let thisValue = arr.reduce((addedVal, num) => {
-    addedVal = num + addedVal;
-    return addedVal;
-  }, 0);
-  return thisValue;
+  return arr.reduce((addedVal, num) => {addedVal = num + addedVal; return addedVal;}, 0);
+  // } )
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,11 +48,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
-  let newArr = arr.reduce(function(acc, value){
-    acc = value.purchasePrice + acc;
-    return acc;
-  }, 0);
-  return newArr;
+  return arr.reduce((acc, value) => {acc = value.purchasePrice + acc; return acc;}, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,11 +61,8 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  let newArr = arr.reduce( (acc) => {
-    acc++;
-    return acc;
-  }, 0);
-  return newArr;
+  return arr.reduce((acc) => {acc++; return acc;}, 0);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,11 +123,8 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
-  let newArr = arr.reduce((acc, value, index) => {
-    acc[index] = value.name;
-    return acc;
-  }, []);
-  return newArr;
+  return arr.reduce((acc, value, index) => {acc[index] = value.name; return acc;}, []);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -151,11 +137,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
-  let strings = str.split('');
-  let newArr = strings.reduce ((acc, str) => {
-    return str + acc;
-  },'');
-  return newArr;
+  return str.split('').reduce ((acc, str) => {return str + acc;},'');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -209,6 +191,7 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  return arr.reduce((acc, val) => {return acc[val.children]++;}, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -355,7 +338,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
