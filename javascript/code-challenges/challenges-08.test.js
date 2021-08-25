@@ -96,7 +96,7 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
-  const regex = /0-9/g;
+  const regex = /\d+/;
   return(regex.test(input));
 };
 
@@ -109,6 +109,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  const regex = /(world)/;
+  return(regex.test(input));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,6 +123,8 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let regex = /[A-Z][a-zA-Z]*/g;
+  return(str.match(regex) || []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,6 +135,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let array = [];
+  let regex = /^[A-J][a-z]*./g;
+  for(let i = 0; i < arr.length; i++){
+    let result = arr[i].match(regex);
+    if (result){
+      array.push(result[0]);
+    }
+  }
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -249,7 +262,7 @@ describe('Testing challenge 4', () => {
   test('It should return false if the input does not contain the word school', () => {
     expect(containsWorld('hello everyone')).toBe(false);
   });
-})
+});
 
 describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
