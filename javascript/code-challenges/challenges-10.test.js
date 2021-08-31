@@ -57,11 +57,9 @@ For example:
 
 return: 35
 ------------------------------------------------------------------------------------------------ */
-const totalSum = (matrix) => matrix.reduce((acc, val) => {
-  let num = val.reduce((prevNum, currNum) => (currNum + prevNum) ? currNum : prevNum , 0);
-  acc = (num + acc) ? num : acc;
-  return acc;
-}, 0);
+const totalSum = (matrix) => {
+
+};
 
 // Solution code here...
 
