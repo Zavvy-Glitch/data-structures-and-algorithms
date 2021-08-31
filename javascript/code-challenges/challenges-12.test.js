@@ -3,7 +3,7 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'. 
+Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'.
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
@@ -34,6 +34,7 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
+  return /(^[a-zA-Z]{5,10}$)/.test(word);
   // Solution code here...
 };
 
@@ -46,6 +47,7 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
+  return /0/.test(string);
   // Solution code here...
 };
 
@@ -67,6 +69,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  return /^\w+[\w.]\w+@\w*.(com|net|org)$/.test(email);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,8 +95,9 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  return /^(\(\d{3}\)|\d{3})[\s.-]?\d{3}[\s.-]?\d{4}$/.test(phoneNumber);
 };
+  // Solution code here..
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
