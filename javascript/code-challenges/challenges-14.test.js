@@ -112,7 +112,7 @@ let biggerThanLuke = (arr) => {
     .map((person) => {
       return person.name;
     })
-    .join(' - ');
+    .join(" - ");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -131,6 +131,7 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  return arr.sort((a, b) => (a.price > b.price ? 1 : -1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -147,8 +148,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  return url.includes('https://');
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -170,6 +171,7 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -254,7 +256,7 @@ describe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should check if url is https", () => {
     expect(isSecure("http://www.insecure.com")).toBe(false);
     expect(isSecure("https://secure.com")).toBe(true);
@@ -262,7 +264,7 @@ xdescribe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("It should return true if there are three in a row", () => {
     expect(
       detectTicTacToeWin([
