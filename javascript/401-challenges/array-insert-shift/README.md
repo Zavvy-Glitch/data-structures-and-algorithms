@@ -5,10 +5,12 @@
 
 ## Input
 ```
+Array       Value
 [2,4,6,20], 10
 
       OR
-
+      
+Array           Value
 [15,82,3,10,5], 16
 ```
 
