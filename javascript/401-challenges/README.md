@@ -17,7 +17,7 @@ If we can grab ends of the array, we can swap their values.
 
 ## Pseudocode
 
-plaintext
+``` plaintext
 
 function Reverse-Array takes in `arr`:
 
@@ -31,6 +31,8 @@ function Reverse-Array takes in `arr`:
     
     start = start + 1
     end = end - 1
+ ```
+    
 ## Actual Code
 
 (This would be a file that lives here)
