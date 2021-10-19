@@ -39,5 +39,4 @@ function Reverse-Array takes in `arr`:
 
 ## Visual
 
-![Array reverseal](./ .png)
-(drag snap shot to the readme)
+<img width="901" alt="reverse-array" src="https://user-images.githubusercontent.com/84699682/137825685-9ba94ff3-dfa1-40ef-9885-45a31acaca63.png">
