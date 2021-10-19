@@ -20,4 +20,4 @@ To run your tests
 
 ### 401 Code Challenges
 
-- [Reverse Array]()
+- [Reverse Array](https://github.com/Zavvy-Glitch/data-structures-and-algorithms/tree/main/javascript/401-challenges/reverseArray)
