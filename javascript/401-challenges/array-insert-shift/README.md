@@ -38,7 +38,7 @@ declare arr <- array
 
 declare function insertShiftArray that takes in array and value;
  
-  delcare newArray <- empty array
+  declare newArray <- empty array
   declare variable(j) <- 0
 
     while variable(i) <- 0, variable(i) <- arr.length + 1; i++
