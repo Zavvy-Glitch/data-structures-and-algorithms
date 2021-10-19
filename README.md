@@ -21,3 +21,4 @@ To run your tests
 ### 401 Code Challenges
 
 - [Reverse Array](https://github.com/Zavvy-Glitch/data-structures-and-algorithms/tree/main/javascript/401-challenges/reverseArray)
+- [Array-Insert-Shift](https://github.com/Zavvy-Glitch/data-structures-and-algorithms/tree/main/javascript/401-challenges/array-insert-shift)
