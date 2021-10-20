@@ -34,4 +34,5 @@
 ## Actual Code
 
 ## Visual
-
+![BinarySearch](https://user-images.githubusercontent.com/84699682/138179444-49310bfa-bd0e-4e2e-a2b8-fff29f28dbd5.JPG)
+![BinarySearch2](https://user-images.githubusercontent.com/84699682/138180598-6c855433-caf4-40c7-8f02-9ac6623dd372.JPG)
