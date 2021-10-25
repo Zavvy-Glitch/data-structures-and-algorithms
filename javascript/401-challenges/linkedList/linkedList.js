@@ -57,6 +57,7 @@ class LinkedList {
 }
 
 const list = new LinkedList();
+
 list.head = new Node(15);
 list.head.next = new Node(8);
 list.head.next.next = new Node(80);
