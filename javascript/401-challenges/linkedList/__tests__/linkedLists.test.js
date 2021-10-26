@@ -1,7 +1,7 @@
 'use strict';
 
 const LinkedList = require('../linkedList.js');
-const Node = require('../node.js');
+// const Node = require('../node.js');
 
 describe('Testing LinkedList methods', () => {
 
@@ -9,6 +9,7 @@ describe('Testing LinkedList methods', () => {
     expect(true).toBeTruthy();
   });
 
+  //Code Challenge set 1 Class 06
   it('Can successfully instantiate an empty linked list', () => {
     const list = new LinkedList();
     expect(list.head).toEqual(null);
@@ -31,17 +32,25 @@ describe('Testing LinkedList methods', () => {
   });
   it('Will return true when finding a value within the linked list that exists', () => {
     const list = new LinkedList();
-    list.toString();
-    expect(list.value).toEqual();
+    list.toString(list.length);
+    expect(list.value).toBeTruthy();
   });
   it('Will return false when searching for a value in the linked list that does not exist', () => {
-
+    const list = new LinkedList();
+    list.toString(list.length);
+    expect(list.value).toBeFalsy();
   });
   it('Can properly return a collection of all the values that exist in the linked list', () => {
     const list = new LinkedList();
-    list.length = 
+    // list.length =
     expect(list.length).toEqual();
     console.log('values of list should be', list.length);
   });
+
+  //Code Challenge set 2 Class 06
+  it('Can successfully add a node to the end of the linked list', () => {
+
+  });
+
 });
 
