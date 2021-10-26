@@ -17,7 +17,7 @@ class LinkedList {
       node.next = this.head;
       this.head = node;
     }
-    console.log('Insert new head', this);
+    // console.log('Insert new head', this);
     return this;
   }
 
@@ -48,13 +48,63 @@ class LinkedList {
     }
     stringArr.forEach(val => {
       string = string.concat(`{${val}}->`);
-      console.log('Current String', string);
     });
     string = `${string}NULL`;
-    console.log(string);
     return string;
   }
+
+  append(value) {
+    let node = new Node(value);
+    if(!this.head){
+      this.head = node;
+    } else {
+      let current = this.head;
+      console.log('current value should be 15', current);
+      while(current.next){
+        current = current.next;
+      }
+      current.next = node;
+    }
+  }
+
+  insertBefore(value, newValue){
+    if(!this.includes(value)) {
+      return('Value cannot be located. Cannot insert');
+    } else {
+      let current = this.head;
+      let prevNode = null;
+      while(current.value !== value){
+        prevNode = current;
+        current = current.next;
+      }
+      let newNode = new Node(newValue);
+      newNode.value = newValue;
+      newNode.next = prevNode.next;
+      prevNode.next = newNode;
+      console.log(newNode);
+    }
+  }
+
+
+  insertAfter(value, newValue){
+    if(!this.includes(value)) {
+      return('Value cannot be located. Cannot insert');
+    } else {
+      let current = this.head;
+      let prevNode = this.head;
+      while(current.value !== value){
+        prevNode = current;
+        current = current.next;
+      }
+      let newNode = new Node(newValue);
+      newNode.next = current.next;
+      current.next = newNode;
+      prevNode.next = newNode;
+      console.log(newNode);
+    }
+  }
 }
+
 
 const list = new LinkedList();
 
@@ -62,10 +112,15 @@ list.head = new Node(15);
 list.head.next = new Node(8);
 list.head.next.next = new Node(80);
 list.head.next.next.next = new Node(40);
-console.log(list);
+list.head.next.next.next.next = new Node(50);
+// console.log(list);
 
 list.insert();
 list.includes();
 list.toString();
+list.append();
+list.insertBefore();
+list.insertAfter();
+
 
 module.exports = LinkedList;
