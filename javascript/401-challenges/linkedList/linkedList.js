@@ -85,7 +85,6 @@ class LinkedList {
     }
   }
 
-
   insertAfter(value, newValue){
     if(!this.includes(value)) {
       return('Value cannot be located. Cannot insert');
@@ -103,38 +102,43 @@ class LinkedList {
       // console.log(newNode);
     }
   }
+
   kthFromEnd(k) {
     let current = this.head;
     let count = 0;
 
     while(current !== null){
       if (count === k)
-        return current.value;
+        return current;
       count++;
       current = current.next;
-      console.log(current.value);
+      console.log(current);
+      console.log(count);
     } return 0;
   }
+
 }
 
+const list1 = new LinkedList();
+list1.head = new Node(15);
+list1.head.next = new Node(8);
+list1.head.next.next = new Node(80);
+list1.head.next.next.next = new Node(40);
+list1.head.next.next.next.next = new Node(50);
+list1.head.next.next.next.next.next = new Node(18);
+list1.head.next.next.next.next.next.next = new Node(2);
 
 
-const list = new LinkedList();
 
-list.head = new Node(15);
-list.head.next = new Node(8);
-list.head.next.next = new Node(80);
-list.head.next.next.next = new Node(40);
-list.head.next.next.next.next = new Node(50);
-// console.log(list);
+console.log(list1);
 
-// list.insert();
-// list.includes();
-// list.toString();
-// list.append();
-// list.insertBefore();
-// list.insertAfter();
-list.kthFromEnd(3);
+list1.insert();
+list1.includes();
+list1.toString();
+list1.append();
+list1.insertBefore();
+list1.insertAfter();
+list1.kthFromEnd();
 
 
 module.exports = LinkedList;
