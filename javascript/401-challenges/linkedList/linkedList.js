@@ -31,7 +31,7 @@ class LinkedList {
       }
       current = current.next;
     }
-    console.log(current);
+    // console.log(current);
     return false;
   }
 
@@ -59,7 +59,7 @@ class LinkedList {
       this.head = node;
     } else {
       let current = this.head;
-      console.log('current value should be 15', current);
+      // console.log('current value should be 15', current);
       while(current.next){
         current = current.next;
       }
@@ -81,7 +81,7 @@ class LinkedList {
       newNode.value = newValue;
       newNode.next = prevNode.next;
       prevNode.next = newNode;
-      console.log(newNode);
+      // console.log(newNode);
     }
   }
 
@@ -100,10 +100,23 @@ class LinkedList {
       newNode.next = current.next;
       current.next = newNode;
       prevNode.next = newNode;
-      console.log(newNode);
+      // console.log(newNode);
     }
   }
+  kthFromEnd(k) {
+    let current = this.head;
+    let count = 0;
+
+    while(current !== null){
+      if (count === k)
+        return current.value;
+      count++;
+      current = current.next;
+      console.log(current.value);
+    } return 0;
+  }
 }
+
 
 
 const list = new LinkedList();
@@ -115,12 +128,13 @@ list.head.next.next.next = new Node(40);
 list.head.next.next.next.next = new Node(50);
 // console.log(list);
 
-list.insert();
-list.includes();
-list.toString();
-list.append();
-list.insertBefore();
-list.insertAfter();
+// list.insert();
+// list.includes();
+// list.toString();
+// list.append();
+// list.insertBefore();
+// list.insertAfter();
+list.kthFromEnd(3);
 
 
 module.exports = LinkedList;
