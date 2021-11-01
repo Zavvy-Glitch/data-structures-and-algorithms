@@ -37,27 +37,29 @@ class Stack {
 
 class Queue {
   constructor() {
-    this.front = [];
-    this.back = [];
+    this.front = null;
+    this.back = null;
   }
 
   enqueue(record) {
     let addNode = new Node(record);
-    let currentBack = this.back;
-
-    if (currentBack) {
-      currentBack.next = addNode;
-    }
-    this.back = addNode;
 
     if(!this.front) {
       this.front = addNode;
+      this.back = addNode;
+    } else {
+      this.back.next = addNode;
+      this.back = addNode;
     }
   }
 
   dequeue() {
     let removeNode = this.front;
-    this.front = removeNode.next;
+    if(removeNode.next) {
+      this.front = removeNode.next;
+    } else {
+      this.front = null;
+    }
 
     if(this.back === removeNode) {
       this.back = removeNode.next;
@@ -66,7 +68,8 @@ class Queue {
   }
 
   peek() {
-    return console.log(this.back);
+    console.log(this.front.value);
+    return this.front;
   }
 
 }
