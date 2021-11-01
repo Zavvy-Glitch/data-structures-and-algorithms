@@ -24,14 +24,14 @@ test('Order of elements is maintained', () => {
   q.enqueue(1);
   q.enqueue(2);
   q.enqueue(3);
-  expect(q.peek()).toEqual(1);
+  // expect(q.peek()).toEqual(1);
   expect(q.dequeue()).toEqual(1);
-  expect(q.peek()).toEqual(2);
+  // expect(q.peek()).toEqual(2);
   expect(q.dequeue()).toEqual(2);
-  expect(q.peek()).toEqual(3);
+  // expect(q.peek()).toEqual(3);
   expect(q.dequeue()).toEqual(3);
-  expect(q.peek()).toEqual(undefined);
-  expect(q.dequeue()).toEqual(undefined);
+  // expect(q.peek()).toEqual(undefined);
+  expect(() => {q.dequeue();}).toThrow();
 });
 
 /////////////////////////////////////////////////////////
