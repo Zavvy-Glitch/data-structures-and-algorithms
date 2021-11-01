@@ -3,19 +3,19 @@ const LinkedList = require('../linkedList.js');
 
 class Stack {
   constructor () {
-    this.data = [];
+    this.topData = [];
   }
 
   push(record) {
-    this.data.push(record);
+    this.topData.push(record);
   }
 
   pop() {
-    return this.data.pop();
+    return this.topData.pop();
   }
 
   peek() {
-    return this.data[this.data.length - 1];
+    return this.topData[this.data.length - 1];
   }
 }
 
