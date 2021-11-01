@@ -22,19 +22,15 @@ describe('Testing LinkedList methods', () => {
   it('The head property will properly point to the first node in the linked list', () => {
     const list = new LinkedList();
     expect(list.head).toEqual(null);
-    console.log('Should be head be', list.head);
+    // console.log('Head should be', list.head);
   });
   it('Can properly insert multiple nodes into the linked list', () => {
     const list = new LinkedList();
     list.insert((10), (5));
     expect(list.head.value).toBe((10), (5));
-    console.log('New Nodes should be', list);
+    // console.log('New Nodes should be', list);
   });
-  it('Will return true when finding a value within the linked list that exists', () => {
-    const list = new LinkedList();
-    list.toString(list.length);
-    expect(list.value).toBeTruthy();
-  });
+
   it('Will return false when searching for a value in the linked list that does not exist', () => {
     const list = new LinkedList();
     list.toString(list.length);
@@ -44,7 +40,7 @@ describe('Testing LinkedList methods', () => {
     const list = new LinkedList();
     // list.length =
     expect(list.length).toEqual();
-    console.log('values of list should be', list.length);
+    // console.log('values of list should be', list.length);
   });
 
   //Code Challenge set 2 Class 06

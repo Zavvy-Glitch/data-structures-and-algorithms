@@ -67,23 +67,23 @@ class LinkedList {
     }
   }
 
-  // insertBefore(value, newValue){
-  //   if(!this.includes(value)) {
-  //     return('Value cannot be located. Cannot insert');
-  //   } else {
-  //     let current = this.head;
-  //     let prevNode = null;
-  //     while(current.value !== value){
-  //       prevNode = current;
-  //       current = current.next;
-  //     }
-  //     let newNode = new Node(newValue);
-  //     newNode.value = newValue;
-  //     newNode.next = prevNode.next;
-  //     prevNode.next = newNode;
-  //     // console.log(newNode);
-  //   }
-  // }
+  insertBefore(value, newValue){
+    if(!this.includes(value)) {
+      return('Value cannot be located. Cannot insert');
+    } else {
+      let current = this.head;
+      let prevNode = null;
+      while(current.value !== value){
+        prevNode = current;
+        current = current.next;
+      }
+      let newNode = new Node(newValue);
+      newNode.value = newValue;
+      newNode.next = prevNode.next;
+      prevNode.next = newNode;
+      // console.log(newNode);
+    }
+  }
 
   insertAfter(value, newValue){
     if(!this.includes(value)) {
@@ -112,30 +112,30 @@ class LinkedList {
         return current;
       count++;
       current = current.next;
-      console.log(current);
-      console.log(count);
+      // console.log(current);
+      // console.log(count);
     } return 0;
   }
 
 }
 
-const list1 = new LinkedList();
-list1.head = new Node(15);
-list1.head.next = new Node(8);
-list1.head.next.next = new Node(80);
-list1.head.next.next.next = new Node(40);
-list1.head.next.next.next.next = new Node(50);
-list1.head.next.next.next.next.next = new Node(18);
-list1.head.next.next.next.next.next.next = new Node(2);
+const list = new LinkedList();
+list.head = new Node(15);
+list.head.next = new Node(8);
+list.head.next.next = new Node(80);
+list.head.next.next.next = new Node(40);
+list.head.next.next.next.next = new Node(50);
+list.head.next.next.next.next.next = new Node(18);
+list.head.next.next.next.next.next.next = new Node(2);
 
 
-list1.insert();
-list1.includes();
-list1.toString();
-list1.append();
-// list1.insertBefore();
-list1.insertAfter();
-list1.kthFromEnd();
+list.toString();
+list.insertBefore();
+list.insert();
+list.includes();
+list.append();
+list.insertAfter();
+list.kthFromEnd();
 
 
 module.exports = LinkedList;
