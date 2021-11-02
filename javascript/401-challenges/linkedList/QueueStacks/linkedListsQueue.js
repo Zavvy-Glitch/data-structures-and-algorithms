@@ -7,29 +7,30 @@ class Node {
 
 class Stack {
   constructor () {
-    this.data = [];
+    this.top = null;
   }
 
   push(record) {
-    let prevRecord = this.data;
+    let prevRecord = this.top;
     let node = new Node(record);
     node.next = prevRecord;
-    this.data = node;
+    this.top = node;
   }
 
   pop() {
-    let temp = this.data;
-    this.data = temp.next;
+    let temp = this.top;
+    this.top = temp.next;
     return temp.value;
   }
 
   peek() {
-    return this.data.value;
+    return this.top.value;
   }
 
   isEmpty() {
-    if(!this.data)
-      return;
+    if(!this.top){
+      return true;
+    } return false;
   }
 }
 
