@@ -22,7 +22,7 @@ test('can add multiple cats or dogs to a queue', () => {
   }).not.toThrow();
 });
 
-test('can remove cats or dogs from a queue', () => {
+test('can remove a cat or a dog from a queue', () => {
   const q = new AnimalShelter();
   expect(() => {
     q.enqueue({type:'dog'});
