@@ -45,3 +45,15 @@ test('Can successfully return a collection from a postorder traversal', () => {
   expect(() => {
   }) .not.toThrow();
 });
+
+test('Can successfully return Max Value', () => {
+  const n = new Node();
+  expect(() => {
+  }) .not.toThrow();
+});
+
+test('Can successfully return Min Value', () => {
+  const n = new Node();
+  expect(() => {
+  }) .not.toThrow();
+});
