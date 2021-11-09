@@ -56,3 +56,5 @@
     - Return an array of node values that conform to the breadth first construction
 
     ![breadthTrees](images/breadthFirst.jpg)
+    
+    Contributions(Stefanie Riehle, Alex Grazda)
