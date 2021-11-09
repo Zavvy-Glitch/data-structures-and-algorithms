@@ -1,46 +1,13 @@
 'use strict';
 
 class Node {
-  constructor(data) {
+  constructor(data, k = 0) {
     this.data = data;
     this.left = null;
     this.right = null;
   }
 }
 
-// class BinaryTree {
-//   constructor() {
-//     this.root = null;
-//   }
-//   preOrder(value) {
-//     if (value !== null) {
-//       console.log(value.value);
-//       this.preOrder(value.left);
-//       this.preOrder(value.right);
-//     }
-//   }
-
-//   inOrder(value) {
-//     if (value !== null) {
-//       this.inOrder(value.left);
-//       console.log(value.value);
-//       this.inOrder(value.right);
-//     }
-//   }
-
-//   postOrder(value) {
-//     if (value.left) {
-//       this.postOrder(value.left);
-//     }
-
-//     if (value.right) {
-//       this.postOrder(value.right);
-
-//       console.log(value.value);
-//     }
-//   }
-
-// }
 
 class BinarySearch {
   constructor() {
@@ -170,6 +137,7 @@ class BinarySearch {
 
 }
 
+
 const treeNode = new BinarySearch();
 treeNode.add(22);
 treeNode.add(12);
@@ -186,7 +154,7 @@ treeNode.add(8);
 
 
 const root = treeNode.getRootNode();
-console.log(treeNode);
+// console.log(treeNode);
 
 console.log('********In-Order Traversal********');
 treeNode.inOrder(root);
@@ -194,8 +162,7 @@ console.log('********Pre-Order Traversal********');
 treeNode.preOrder(root);
 console.log('********Post-Order Traversal********');
 treeNode.postOrder(root);
-
 console.log('************** Max Value is', treeNode.findMax(root));
-// console.log('************** Min Value is', treeNode.findMin(root));
+
 
 module.exports = { BinarySearch, Node };

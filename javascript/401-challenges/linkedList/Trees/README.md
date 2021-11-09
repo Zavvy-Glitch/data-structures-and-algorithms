@@ -32,17 +32,27 @@
     - Returns: number
   - Find the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
+- Write a function called breadth first
+  - Arguments: tree
+  - Return: list of all values in the tree, in the order they were encountered
+    - NOTE: Traverse the input tree using a Breadth-first approach
+
 ## Structure and Testing
 
 - Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. You will be given feedback and marked down if you attempt to define a large, complex algorithm in one function definition.
 
 - Write tests to prove the following functionality:
+  - Binary Tree/ Binary Tree Search:
+    - Can successfully instantiate an empty tree
+    - Can successfully instantiate a tree with a single root node
+    - Can successfully add a left child and right child to a single root node
+    - Can successfully return a collection from a preorder traversal
+    - Can successfully return a collection from an inorder traversal
+    - Can successfully return a collection from a postorder traversal
+    - Can successfully find a Max Value
+    - Can successfully find a Min Value
 
-  - Can successfully instantiate an empty tree
-  - Can successfully instantiate a tree with a single root node
-  - Can successfully add a left child and right child to a single root node
-  - Can successfully return a collection from a preorder traversal
-  - Can successfully return a collection from an inorder traversal
-  - Can successfully return a collection from a postorder traversal
-  - Can successfully find a Max Value
-  - Can successfully find a Min Value
+  - K-ary Tree:
+    - Return an array of node values that conform to the breadth first construction
+
+    ![breadthTrees](images/breadthFirst.jpg)
