@@ -1,4 +1,4 @@
-const { BinaryTree, BinarySearch, Node } = require('../trees.js');
+const { breadthFirst } = require('../trees.js');
 
 xtest('BinaryTree is a class', () => {
   expect(typeof BinaryTree.prototype.constructor).toEqual('function');
