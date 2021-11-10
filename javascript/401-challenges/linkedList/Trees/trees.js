@@ -1,7 +1,7 @@
 'use strict';
 
 class Node {
-  constructor(data, k = 0) {
+  constructor(data) {
     this.data = data;
     this.left = null;
     this.right = null;
