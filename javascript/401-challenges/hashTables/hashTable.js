@@ -73,14 +73,25 @@ class HashTable {
 
   }
 
-  contains(key){
-    let hash = this.hash(key);
-    if (this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)){
-      return true;
-    } else{
-      return false;
-    }
+  // contains(key){
+  //   let hash = this.hash(key);
+  //   if (this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)){
+  //     return true;
+  //   } else{
+  //     return false;
+  //   }
 
+  // }
+
+  repeatedWord(array){
+    let words = array.split(' '),
+      wordMap = {};
+    for(let i = 0; i < words.length; i++){
+      let currentWordCount = wordMap[words[i]];
+      let count = currentWordCount ? currentWordCount : 0;
+      wordMap[words[i]] = count + 1;
+    }
+    return wordMap;
   }
 }
 
@@ -89,4 +100,7 @@ console.log(map.hash('Random'));
 
 map.add('Random', 'title');
 console.log(map.map[247]);
-console.log(map.get(247));
+// console.log(map.repeatedWord(arr));
+
+let array = 'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...';
+console.log(map.repeatedWord(array));
