@@ -65,13 +65,13 @@ for (let i = 0; i < vertex.length; i++) {
 }
 
 graph.addEdges('Pandora', 'Arendelle');
-graph.addEdges('Arendelle', 'Monstropolis');
 graph.addEdges('Arendelle', 'Metroville');
+graph.addEdges('Arendelle', 'Monstropolis');
 graph.addEdges('Monstropolis', 'Metroville');
 graph.addEdges('Monstropolis', 'Naboo');
+graph.addEdges('Metroville', 'Narnia');
 graph.addEdges('Naboo', 'Metroville');
-graph.addEdges('Naboo', 'Narnia');
-graph.addEdges('Narnia', 'Metroville');
+graph.addEdges('Narnia', 'Naboo');
 
 console.log(graph);
 console.log('*****Vertices / BFS Traversal*****');
