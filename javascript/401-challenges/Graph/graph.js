@@ -57,30 +57,26 @@ class Graph {
   }
 }
 
-let graph = new Graph(7);
-let vertex = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+let graph = new Graph(6);
+let vertex = ['Pandora', 'Arendelle', 'Monstropolis', 'Metroville', 'Naboo', 'Narnia'];
 
 for (let i = 0; i < vertex.length; i++) {
   graph.addVertices(vertex[i]);
 }
 
-graph.addEdges('A', 'B');
-graph.addEdges('A', 'C');
-graph.addEdges('A', 'D');
-graph.addEdges('A', 'G');
-graph.addEdges('B', 'C');
-graph.addEdges('C', 'B');
-graph.addEdges('D', 'C');
-graph.addEdges('D', 'E');
-graph.addEdges('D', 'E');
-graph.addEdges('F', 'E');
-graph.addEdges('G', 'B');
-graph.addEdges('G', 'F');
+graph.addEdges('Pandora', 'Arendelle');
+graph.addEdges('Arendelle', 'Monstropolis');
+graph.addEdges('Arendelle', 'Metroville');
+graph.addEdges('Monstropolis', 'Metroville');
+graph.addEdges('Monstropolis', 'Naboo');
+graph.addEdges('Naboo', 'Metroville');
+graph.addEdges('Naboo', 'Narnia');
+graph.addEdges('Narnia', 'Metroville');
 
 console.log(graph);
-console.log('***Vertices***');
-graph.bfs('A');
-console.log('***Neighbors***');
+console.log('*****Vertices / BFS Traversal*****');
+graph.bfs('Pandora');
+console.log('*****Neighbors******');
 graph.getNeighbors(vertex);
 
 module.exports = { Graph };
