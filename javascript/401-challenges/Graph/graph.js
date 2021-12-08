@@ -20,6 +20,13 @@ class Graph {
     this.adjList.get(eV).push(sV);
   }
 
+  getEdges(vertex){
+    if(!this.adjList.has(vertex)){
+      throw new Error('No Edges Available');
+    }
+    return[...this.adjList.get(vertex)];
+  }
+
   getNeighbors() {
     let getVertices = this.adjList.keys();
     for(let i of getVertices){
@@ -78,5 +85,7 @@ console.log('*****Vertices / BFS Traversal*****');
 graph.bfs('Pandora');
 console.log('*****Neighbors******');
 graph.getNeighbors(vertex);
+console.log('******Edges******');
+console.log(graph.getEdges('Arendelle'));
 
 module.exports = { Graph };
