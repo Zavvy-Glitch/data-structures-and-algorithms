@@ -12,22 +12,22 @@ class Graph {
     this.adjList.set(v, []);
   }
 
-  addEdges(sV, eV) {
+  addEdges(sV, eV, weight) {
     if(!this.adjList.has(sV) && !this.adjList.has(eV)){
       throw new Error('No Vertex Available');
     }
-    this.adjList.get(sV).push(eV);
-    this.adjList.get(eV).push(sV);
+    this.adjList.get(sV, weight).push(eV, weight);
+    this.adjList.get(eV, weight).push(sV, weight);
   }
 
-  getEdges(vertex){
+  getNeighbors(vertex){
     if(!this.adjList.has(vertex)){
       throw new Error('No Edges Available');
     }
     return[...this.adjList.get(vertex)];
   }
 
-  getNeighbors() {
+  getNodes() {
     let getVertices = this.adjList.keys();
     for(let i of getVertices){
       let getValues = this.adjList.get(i);
@@ -71,21 +71,22 @@ for (let i = 0; i < vertex.length; i++) {
   graph.addVertices(vertex[i]);
 }
 
-graph.addEdges('Pandora', 'Arendelle');
-graph.addEdges('Arendelle', 'Metroville');
-graph.addEdges('Arendelle', 'Monstropolis');
-graph.addEdges('Monstropolis', 'Metroville');
-graph.addEdges('Monstropolis', 'Naboo');
-graph.addEdges('Metroville', 'Narnia');
-graph.addEdges('Naboo', 'Metroville');
-graph.addEdges('Narnia', 'Naboo');
+graph.addEdges('Pandora', 'Arendelle', 150);
+graph.addEdges('Pandora', 'Metroville', 82);
+graph.addEdges('Arendelle', 'Metroville', 99);
+graph.addEdges('Arendelle', 'Monstropolis', 42);
+graph.addEdges('Monstropolis', 'Metroville', 105);
+graph.addEdges('Monstropolis', 'Naboo', 73);
+graph.addEdges('Metroville', 'Narnia', 37);
+graph.addEdges('Naboo', 'Metroville', 26);
+graph.addEdges('Narnia', 'Naboo', 250);
 
 console.log(graph);
-console.log('*****Vertices / BFS Traversal*****');
-graph.bfs('Pandora');
+console.log('*****BFS Traversal*****');
+console.log(graph.bfs('Pandora'));
 console.log('*****Neighbors******');
-graph.getNeighbors(vertex);
-console.log('******Edges******');
-console.log(graph.getEdges('Arendelle'));
+console.log(graph.getNeighbors('Pandora'));
+console.log('******Nodes******');
+graph.getNodes()
 
 module.exports = { Graph };
