@@ -40,6 +40,7 @@ class Queue {
   constructor() {
     this.front = null;
     this.back = null;
+    this.items = [];
   }
 
   enqueue(record) {
@@ -71,6 +72,10 @@ class Queue {
   peek() {
     console.log(this.front.value);
     return this.front;
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
   }
 
 }
