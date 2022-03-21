@@ -9,17 +9,21 @@ Output: [6, 5, 4, 3, 2, 1]
 
 ## Algorithm
 
-If we can grab ends of the array, we can swap their values.
-* Use a for loop to look at all the elements in the array.(iterating through the array)
-* At each item, I swap with the inverse array index.
-* Only go halfway (give or take 1) and stop.
-  * if we dont go halfway we will reswap
+Will need two parts / pointers (start and end)
+The start and end values should swap their positions values.
+Then increment start and decrement end.
+
+Will require a temporary variable to hold front value to be used.
+
+IF end is greater that start in terms of index position value, stop the process.
+
+return the reversed array
 
 ## Pseudocode
 
 ``` plaintext
 
-function Reverse-Array takes in `arr`:
+function reverseArray takes in `arr`:
 
   declare start <- 0;
   declare end <- length of arr minus 1;
@@ -29,14 +33,31 @@ function Reverse-Array takes in `arr`:
     arr[start] <- arr[end]
     arr[end] <- temp
     
-    start = start + 1
-    end = end - 1
+    start will increment
+    end will decrement
+    
+    return reverseArray
  ```
     
 ## Actual Code
 
-(This would be a file that lives here)
+``` plaintext
 
+function reverseArray(arr) {
+  let start = 0;
+  let end = arr.length - 1;
+  
+  while(end > start) {
+    let temp = arr[start];
+    arr[front] = arr[end];
+    arr[end] = temp;
+    
+    start++
+    end--;
+  }
+  return reverseArray;
+}
+```
 ## Visual
 
 <img width="901" alt="reverse-array" src="https://user-images.githubusercontent.com/84699682/137825685-9ba94ff3-dfa1-40ef-9885-45a31acaca63.png">
