@@ -6,18 +6,20 @@ class Graph {
   constructor(vertices) {
     this.vertices = vertices;
     this.adjList = new Map();
+    this.edges = 0;
   }
 
   addVertices(v) {
     this.adjList.set(v, []);
   }
 
-  addEdges(sV, eV, weight) {
+  addEdges(sV, eV,/*weight*/) {
     if(!this.adjList.has(sV) && !this.adjList.has(eV)){
       throw new Error('No Vertex Available');
     }
-    this.adjList.get(sV, weight).push(eV, weight);
-    this.adjList.get(eV, weight).push(sV, weight);
+    this.adjList.get(sV,/* weight*/).push(eV,/* weight*/);
+    this.adjList.get(eV,/* weight*/).push(sV,/* weight*/);
+    this.edges++
   }
 
   getNeighbors(vertex){
@@ -62,6 +64,23 @@ class Graph {
       }
     }
   }
+
+  dfs(node) {
+    let visited = {};
+    this.DFSUtil(node, visited);
+    
+  }
+  DFSUtil(vert, visited){
+    visited[vert] = true;
+    console.log(vert);
+    let get_neighbours = this.adjList.get(vert);
+
+    for(let i in get_neighbours) {
+      let get_element = get_neighbours[i];
+      if(!visited[get_element])
+        this.DFSUtil(get_element, visited);
+    }
+  }
 }
 
 let graph = new Graph(6);
@@ -88,5 +107,7 @@ console.log('*****Neighbors******');
 console.log(graph.getNeighbors('Pandora'));
 console.log('******Nodes******');
 graph.getNodes()
+console.log('*****DFS Traversal*****');
+console.log(graph.dfs('Pandora'));
 
 module.exports = { Graph };

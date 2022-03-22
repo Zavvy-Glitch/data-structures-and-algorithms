@@ -3,23 +3,23 @@
 //example array and value
 
 const array = [2,3,4,5];
-const value = 10;
+const val = 10;
 
-const num = value;
+const num = val;
 const arr = array;
 
 function insertShiftArray(){
-  let newArray = [];
+  let newArr = [];
   let j = 0;
   for(let i = 0; i < arr.length +1; i++){
     if(i === arr.length/2){
-      newArray[i]=num;
+      newArr[i]=num;
     } else {
-      newArray[i] = arr[j];
+      newArr[i] = arr[j];
       j++;
     }
   }
-  return newArray;
+  return newArr;
 }
 
 console.log(insertShiftArray(arr, num));
