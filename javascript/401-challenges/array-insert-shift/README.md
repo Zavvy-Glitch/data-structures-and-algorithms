@@ -41,7 +41,7 @@ declare function insertShiftArray that takes in array and value;
   declare newArray <- empty array
   declare variable(j) <- 0
 
-    while variable(i) <- 0, variable(i) <- arr.length + 1; i++
+    while variable(i) <- 0, variable(i) <- arr.length + 1; i increments
     
     if variable(i) === arr.length/2 <- newArray[i]=num
     
