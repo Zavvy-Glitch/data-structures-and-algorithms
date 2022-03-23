@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // our data object
 class Vertex {
@@ -34,10 +34,12 @@ class Graph {
 
   // add method should specify direct vs undirected, adding a connection between vertices
   addDirectedEdge(startVertex, endVertex, weight = 0) {
-
     // check if the vertex exists in our list of vertices.
-    if(!this.adjacencyList.has(startVertex) && !this.adjacencyList.has(endVertex)) {
-      throw new Error('Vertex Error');
+    if (
+      !this.adjacencyList.has(startVertex) &&
+      !this.adjacencyList.has(endVertex)
+    ) {
+      throw new Error("Vertex Error");
     }
 
     // what should do to add them to our adjacency values?
@@ -51,8 +53,8 @@ class Graph {
   }
 
   getNeighbors(vertex) {
-    if(!this.adjacencyList.has(vertex)) {
-      throw new Error('GET NEIGHBOR ERROR :: Invalid vertex');
+    if (!this.adjacencyList.has(vertex)) {
+      throw new Error("GET NEIGHBOR ERROR :: Invalid vertex");
     }
 
     // I don't want mutate this array
@@ -60,23 +62,19 @@ class Graph {
   }
 
   breadthFirst(startVertex) {
-
     const queue = [];
     const visitedNodes = new Set();
 
     queue.push(startVertex);
     visitedNodes.add(startVertex);
 
-
-    while(queue.length) {
-
+    while (queue.length) {
       const current = queue.shift();
 
       // I need to see all of current nodes adjecneies
       let neighbors = this.getNeighbors(current);
 
       for (let edge of neighbors) {
-
         let neighbor = edge.vertex;
 
         if (!visitedNodes.has(neighbor)) {
@@ -92,17 +90,16 @@ class Graph {
   }
 }
 
-
 let graph = new Graph();
 
-let A = graph.addVertex('A');
-let B = graph.addVertex('B');
-let C = graph.addVertex('C');
-let D = graph.addVertex('D');
-let E = graph.addVertex('E');
-let F = graph.addVertex('F');
-let G = graph.addVertex('G');
-let H = graph.addVertex('H');
+let A = graph.addVertex("A");
+let B = graph.addVertex("B");
+let C = graph.addVertex("C");
+let D = graph.addVertex("D");
+let E = graph.addVertex("E");
+let F = graph.addVertex("F");
+let G = graph.addVertex("G");
+let H = graph.addVertex("H");
 
 graph.addDirectedEdge(A, D);
 graph.addDirectedEdge(A, C);
