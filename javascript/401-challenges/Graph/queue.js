@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 class Queue {
-  constructor(){
+  constructor() {
     this.items = [];
   }
 
@@ -9,26 +9,23 @@ class Queue {
     this.items.push(element);
   }
 
-  dequeue(){
-    if(this.isEmpty())
-      return 'Empty';
+  dequeue() {
+    if (this.isEmpty()) return "Empty";
     return this.items.shift();
   }
 
-  front(){
-    if(this.isEmpty())
-      return 'Empty';
+  front() {
+    if (this.isEmpty()) return "Empty";
     return this.items[0];
   }
 
-  isEmpty(){
+  isEmpty() {
     return this.items.length === 0;
   }
 
-  getQueue(){
-    let str = '';
-    for(let i = 0; i < this.items.length; i++)
-      str += this.items[i] + ' ';
+  getQueue() {
+    let str = "";
+    for (let i = 0; i < this.items.length; i++) str += this.items[i] + " ";
     return str;
   }
 }
