@@ -20,4 +20,4 @@ node6.next = node7;
 
 const list = new LinkedList(node1);
 
-console.log(list.toString());
+// console.log(list.toString());
