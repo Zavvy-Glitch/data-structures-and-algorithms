@@ -25,67 +25,134 @@ describe('Linked List', () => {
     expect(list.head).toEqual(null);
   });
 
-  it('Can properly insert multiple nodes into the linked list', () => {
-    const node1 = new Node(14);
-    const node2 = new Node(15);
-    const node3 = new Node(90);
-    const node4 = new Node(20);
-    
-    node1.next = node2;
-    node2.next = node3;
-    node3.next = node4;
-    
-    const list =  new LinkedList(node1);
-    console.log(list);
-    expect(node1.value).toEqual(14);
-    expect(node2.value).toEqual(15);
-    expect(node3.value).toEqual(90);
-    expect(node4.value).toEqual(20);
+  it('Can properly insert multiple nodes into the linked list', () => {  
+    const list =  new LinkedList();
+
+    list.insert(14);
+    list.insert(15);
+    list.insert(90);
+    list.insert(20);
+
+    expect(list.head.value).toEqual(14);
+    expect(list.head.next.value).toEqual(15);
+    expect(list.head.next.next.value).toEqual(90);
+    expect(list.head.next.next.next.value).toEqual(20);
   });
 
-  it('Will return true when finding a value within the linked list that exists', () => {
-    const node1 = new Node(18);
-    const node2 = new Node(30);
-    
-    node1.next = node2;
-    
-    const list = new LinkedList(node1);
+  it('Will return true when finding a value within the linked list that exists', () => {   
+    const list = new LinkedList();
+
+    list.insert(18);
+    list.insert(30);
+
     const result = list.includes(30);
     expect(result).toEqual(true);
 
   });
 
   it('Will return false when searching for a value in the linked list that does not exist', () => {
-    const node1 = new Node(15);
-    const node2 = new Node(40);
-    const node3 = new Node(45);
+    const list = new LinkedList();
 
-    node1.next = node2;
-    node2.next = node3;
+    list.insert(15);
+    list.insert(40);
+    list.insert(45);
 
-    const list = new LinkedList(node1);
     const result = list.includes(42);
     expect(result).toEqual(false)
   });
 
   it('Can properly return a collection of all the values that exist in the linked list', () => {
-    const node1 = new Node(35);
-    const node2 = new Node(45);
-    const node3 = new Node(13);
-    const node4 = new Node(9);
-    const node5 = new Node(23);
-
-    node1.next = node2;
-    node2.next = node3;
-    node3.next = node4;
-    node4.next = node5;
-
     const result = [];
-    const list = new LinkedList(node1);
-    result.push(list);
+    const list = new LinkedList();
 
-    console.log('-------------------------------', result);
+    list.insert(35);
+    list.insert(45);
+    list.insert(13);
+    list.insert(9);
+    list.insert(23);
+
+    result.push(list);;
 
     expect(result).toEqual([list])
+  })
+
+  it('Can successfully add a node to the end of the linked list', () => {
+    const list = new LinkedList();
+
+    list.insert(30);
+    list.insert(45);
+
+    list.append(16);
+
+    expect(list.head.value).toEqual(30);
+    expect(list.head.next.next.value).toEqual(16);
+  })
+
+  it('Can successfully add multiple nodes to the end of a linked list', () => {
+    const list = new LinkedList();
+    
+    list.insert(15);
+    list.insert(20);
+    
+    list.append(21);
+    list.append(30);
+    list.append(45);
+
+    expect(list.head.value).toEqual(15);
+    expect(list.head.next.next.value).toEqual(21);
+    expect(list.head.next.next.next.value).toEqual(30);
+    expect(list.head.next.next.next.next.value).toEqual(45);
+  })
+
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+    const list = new LinkedList();
+
+    list.insert(15);
+    list.insert(20);
+    list.insertBefore(20, 18);
+    
+    expect(list.head.value).toEqual(15);
+    expect(list.head.next.value).toEqual(18);
+    expect(list.head.next.next.value).toEqual(20);
+  })
+
+  it('Can successfully insert a node before the first node of a linked list', () => {
+    const list = new LinkedList();
+
+    list.insert(15);
+    list.insert(25);
+
+    list.insertBefore(15, 80);
+
+    expect(list.head.value).toEqual(80);
+    expect(list.head.next.value).toEqual(15);
+  })
+
+  it('Can successfully insert after a node in the middle of the linked list', () => {
+    const list = new LinkedList();
+
+    list.insert(12);
+    list.insert(15);
+    list.insert(14);
+
+    list.insertAfter(15, 30);
+
+    expect(list.head.value).toEqual(12);
+    expect(list.head.next.value).toEqual(15);
+    expect(list.head.next.next.value).toEqual(30);
+    expect(list.head.next.next.next.value).toEqual(14);
+  })
+
+  it('Can successfully insert a node after the last node of the linked list', () => {
+    const list = new LinkedList();
+
+    list.insert(14);
+    list.insert(45);
+
+    list.insertAfter(45, 15);
+
+    expect(list.head.value).toEqual(14);
+    expect(list.head.next.value).toEqual(45);
+    expect(list.head.next.next.value).toEqual(15);
   })
 });
