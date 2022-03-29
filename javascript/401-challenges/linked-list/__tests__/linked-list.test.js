@@ -155,4 +155,56 @@ describe('Linked List', () => {
     expect(list.head.next.value).toEqual(45);
     expect(list.head.next.next.value).toEqual(15);
   })
+
+  it('Where k is greater than the length of the linked list', () => {
+    const list = new LinkedList();
+
+    list.insert(1);
+    list.insert(3);
+    list.insert(8);
+    list.insert(2);
+
+    expect(list.kthFromEnd(6)).toEqual("6 is greather than the no. of Nodes in list");
+  });
+
+  it('Where k and the length of the list are the same', () => {
+    const list = new LinkedList();
+
+    list.insert(1);
+    list.insert(3);
+    list.insert(8);
+    list.insert(2);
+
+    expect(list.kthFromEnd(4)).toEqual("Node no.4 value from last is 1");
+  })
+
+  it('Where k is not a positive integer', () => {
+    const list = new LinkedList();
+
+    list.insert(1);
+    list.insert(3);
+    list.insert(8);
+    list.insert(2);
+
+    expect(list.kthFromEnd(-1)).toEqual();
+  })
+
+  it('Where the linked list is of a size 1', () => {
+    const list = new LinkedList();
+
+    list.insert(1);
+
+    expect(list.kthFromEnd(2)).toEqual("2 is greather than the no. of Nodes in list")
+  })
+
+  it('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+    const list = new LinkedList();
+
+    list.insert(1);
+    list.insert(3);
+    list.insert(8);
+    list.insert(2);
+
+    expect(list.kthFromEnd(0)).toEqual()
+  })
 });
