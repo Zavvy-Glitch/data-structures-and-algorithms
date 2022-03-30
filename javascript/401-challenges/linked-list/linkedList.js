@@ -18,6 +18,24 @@ node4.next = node5;
 node5.next = node6;
 node6.next = node7;
 
-const list = new LinkedList(node1);
+const nodeA = new Node('A');
+const nodeB = new Node('B');
+const nodeC = new Node('C');
+const nodeD = new Node('D');
+const nodeE = new Node('F');
+const nodeF = new Node('G');
+const nodeG = new Node('H');
 
-// console.log(list.toString());
+nodeA.next = nodeB;
+nodeB.next = nodeC;
+nodeC.next = nodeD;
+nodeD.next = nodeE;
+nodeE.next = nodeF;
+nodeF.next = nodeG;
+
+
+
+const list1 =  new LinkedList(node1);
+const list2 =  new LinkedList(nodeA);
+
+

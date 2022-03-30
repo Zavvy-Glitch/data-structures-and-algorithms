@@ -133,6 +133,28 @@ class LinkedList {
      }
    }
  }
+zipLists(list1, list2) {
+  let zipper = new LinkedList();
+  let currentA = list1.head;
+  let currentB = list2.head;
+  let currentZip = zipper.head;
+  while (currentA && currentB) {
+    if (currentZip === null) {
+      zipper.head = currentA;
+      currentZip = zipper.head;
+      currentA = currentA.next;
+    }
+    currentZip.next = currentB;
+    currentB = currentB.next;
+    currentZip = currentZip.next;
+    currentZip.next = currentA;
+    currentA = currentA.next;
+    currentZip = currentZip.next;
+  }
+  currentA ? currentZip.next = currentA : currentZip.next = currentB;
+  return zipper;
 }
 
-module.exports = LinkedList;
+}
+
+module.exports = LinkedList
