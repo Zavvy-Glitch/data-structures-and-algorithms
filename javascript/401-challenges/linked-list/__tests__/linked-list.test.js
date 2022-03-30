@@ -207,4 +207,27 @@ describe('Linked List', () => {
 
     expect(list.kthFromEnd(0)).toEqual()
   })
+  it('Should be able to zipper two linked lists', () => {
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+    const zipped = new LinkedList();
+
+    list1.insert(1);
+    list1.insert(3);
+    list1.insert(2);
+
+    list2.insert(5);
+    list2.insert(9);
+    list2.insert(4);
+
+    const zipperedList = zipped.zipLists(list1, list2)
+
+    expect(zipperedList.head.value).toEqual(1);
+    expect(zipperedList.head.next.value).toEqual(5)
+    expect(zipperedList.head.next.next.value).toEqual(3);
+    expect(zipperedList.head.next.next.next.value).toEqual(9);
+    expect(zipperedList.head.next.next.next.next.value).toEqual(2);
+    expect(zipperedList.head.next.next.next.next.next.value).toEqual(4);
+    expect(zipperedList.head.next.next.next.next.next.next).toEqual(null);
+  })
 });
