@@ -1,4 +1,4 @@
-const { Queue } = require('../QueueStacks/linkedListsQueue.js');
+const { Queue } = require('../QueueStacks/stacksAndQueues.js');
 
 class Brackets {
   constructor() {

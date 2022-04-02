@@ -1,21 +1,25 @@
-const { Queue, Stack } = require('../linkedListsQueue.js');
+const { Queue, Stack } = require('../stacksAndQueues.js');
 
 test('Queue is a class', () => {
   expect(typeof Queue.prototype.constructor).toEqual('function');
 });
 
-test('can add elements to a queue', () => {
+test('Can successfully enqueue multiple values into a queue', () => {
   const q = new Queue();
   expect(() => {
     q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
   }).not.toThrow();
 });
 
-test('can remove elements from a queue', () => {
+test('Can successfully dequeue out of a queue the expected value', () => {
   const q = new Queue();
   expect(() => {
     q.enqueue(1);
-    q.dequeue();
+    q.enqueue(2);
+    q.enqueue(3);
+    q.dequeue(2);
   }).not.toThrow();
 });
 
@@ -29,6 +33,26 @@ test('Order of elements is maintained', () => {
   expect(q.dequeue()).toEqual(3);
   expect(() => {q.dequeue();}).toThrow();
 });
+
+test('Calling dequeue or peek on empty queue raises exception', () => {
+  const q = new Queue();
+
+  expect(() => {q.dequeue();}).toThrow();
+  expect(() => {q.peek();}).toThrow();
+});
+
+test('Can successfully empty a queue after multiple dequeues', () => {
+  const q = new Queue();
+  q.enqueue(1);
+  q.enqueue(2);
+  q.enqueue(3);
+  q.enqueue(4);
+
+  expect(q.dequeue()).toEqual(1);
+  expect(q.dequeue()).toEqual(2);
+  expect(q.dequeue()).toEqual(3);
+  expect(q.dequeue()).toEqual(4);
+})
 
 /////////////////////////////////////////////////////////
 

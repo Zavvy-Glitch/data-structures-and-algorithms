@@ -1,9 +1,4 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
+const Node = require('../../Node.js')
 
 class Stack {
   constructor () {
@@ -62,13 +57,12 @@ class Queue {
     } else {
       this.front = null;
     }
-
     if(this.back === removeNode) {
       this.back = removeNode.next;
     }
     return removeNode.value;
   }
-
+  
   peek() {
     console.log(this.front.value);
     return this.front;
@@ -80,4 +74,4 @@ class Queue {
 
 }
 
-module.exports ={ Queue, Stack, Node };
+module.exports ={ Queue, Stack };
