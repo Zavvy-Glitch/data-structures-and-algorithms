@@ -1,44 +1,41 @@
-const { Stack } = require('../QueueStacks/linkedListsQueue.js');
+const { Stack } = require('../QueueStacks/stacksAndQueues.js');
 
 class PseudoQueue {
   constructor() {
-    this.data1 = new Stack();
-    this.data2 = new Stack();
+    this.stack1 = new Stack();
+    this.stack2 = new Stack();
+
+    this.front = null;
+    this.rear = null;
+    this.length = null;
   }
 
   enqueue(value) {
-    this.data1.push(value);
+    this.stack1.push(value);
+    this.front = this.stack1[0];
+    this.rear = this.stack1[this.stack1.top]
+    this.length++;
+
+    return this
   }
 
   dequeue() {
-    console.log(this.data2.isEmpty());
-    if (this.data2.isEmpty()) {
-      while (!this.data1.isEmpty()) {
-        this.data2.push(this.data1.top.value);
-        this.data1.pop();
-      }
+    if (this.stack1.isEmpty()) {
+      return 'Empty Queue'
     }
-    console.log(this.data2);
-    let dataStack2 = this.data2.top.value;
-    this.data2.pop();
-    return dataStack2;
-  }
-  getDataStack1() {
-    return this.data1.top;
-  }
-  getDataStack2() {
-    return this.data2.top;
-  }
+      while (!this.stack1.isEmpty()) {
+        let popNode = this.stack1.pop();
+        this.stack2.push(popNode);
+      }
+      let dequeue2 = this.stack2.pop();
+      while (!this.stack2.isEmpty()) {
+        let popNode = this.stack2.pop();
+        this.stack1.push(popNode)
+        this.length--;
+      }
+      return dequeue2;
+    }
+  };
 
-}
-
-// let pseudoQueue = new PseudoQueue();
-
-// pseudoQueue.enqueue(10);
-// pseudoQueue.enqueue(15);
-// pseudoQueue.enqueue(20);
-// pseudoQueue.enqueue(5);
-// pseudoQueue.dequeue();
-// console.log(pseudoQueue);
 
 module.exports = PseudoQueue;
