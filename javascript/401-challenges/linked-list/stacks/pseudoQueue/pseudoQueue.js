@@ -11,11 +11,20 @@ class PseudoQueue {
   }
 
   enqueue(value) {
+    while(this.stack1.top) {
+      let popped = this.stack1.pop()
+      this.stack2.push(popped);
+    }
     this.stack1.push(value);
-    this.front = this.stack1[0];
-    this.rear = this.stack1[this.stack1.top]
+    this.front = this.stack1.top;
+    this.rear = this.stack1.top;
     this.length++;
 
+    while(this.stack2.top){
+      let popped = this.stack2.pop();
+      this.stack1.push(popped);
+    }
+    this.front = this.stack1.top;
     return this
   }
 
@@ -23,19 +32,26 @@ class PseudoQueue {
     if (this.stack1.isEmpty()) {
       return 'Empty Queue'
     }
-      while (!this.stack1.isEmpty()) {
-        let popNode = this.stack1.pop();
-        this.stack2.push(popNode);
-      }
-      let dequeue2 = this.stack2.pop();
-      while (!this.stack2.isEmpty()) {
-        let popNode = this.stack2.pop();
-        this.stack1.push(popNode)
-        this.length--;
-      }
-      return dequeue2;
+      this.front = this.stack1.top.next;
+
+    if (this.stack1.top.next === null) {
+      this.rear = null;
+    }
+      return this.stack1.pop();
     }
   };
+
+
+let queue = new PseudoQueue;
+
+queue.enqueue(5);
+queue.enqueue(10);
+queue.enqueue(15);
+queue.enqueue(20);
+
+
+console.log(queue);
+
 
 
 module.exports = PseudoQueue;
