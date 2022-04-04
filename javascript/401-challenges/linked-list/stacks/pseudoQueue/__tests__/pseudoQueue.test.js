@@ -4,47 +4,57 @@ test('PseudoQueue is a class', () => {
   expect(typeof PseudoQueue.prototype.constructor).toEqual('function');
 });
 
-test('can add elements to a queue', () => {
-  const q = new PseudoQueue();
+test('can remove elements from a PseudoQueue', () => {
+  const s = new PseudoQueue();
   expect(() => {
-    q.enqueue(10);
-    q.enqueue(15);
-    q.enqueue(20);
-    q.enqueue(5);
+    s.enqueue(10);
+    s.enqueue(10);
+    s.enqueue(15);
+    s.enqueue(20);
+    s.enqueue(5);
+    s.dequeue;
+    s.dequeue;
+    s.dequeue;
+    s.dequeue;
   }).not.toThrow();
 });
 
-test('can remove elements from a queue', () => {
-  const q = new PseudoQueue();
+test('can add elements into a PseudoQueue', () => {
+  const s = new PseudoQueue();
   expect(() => {
-    q.enqueue(10);
-    q.enqueue(10);
-    q.enqueue(15);
-    q.enqueue(20);
-    q.enqueue(5);
-    q.dequeue;
-    q.dequeue;
-    q.dequeue;
-    q.dequeue;
+    s.enqueue(10);
+    s.enqueue(10);
+    s.enqueue(15);
+    s.enqueue(20);
+    s.enqueue(5);
   }).not.toThrow();
 });
 
-test('Order of elements is maintained', () => {
-  const q = new PseudoQueue();
-  q.enqueue(1);
-  q.enqueue(2);
-  q.enqueue(3);
-  expect(q.dequeue()).toEqual(1);
-  expect(q.dequeue()).toEqual(2);
-  expect(q.dequeue()).toEqual(3);
-  expect(() => {q.dequeue();}).toThrow();
+test('Order of elements is maintained when enqueue is instantiated following a FIFO approach', () => {
+  const s = new PseudoQueue();
+  expect(() => {
+    s.enqueue(10);
+    s.enqueue(15);
+    s.enqueue(20);
+    s.enqueue(5);
+  }).not.toThrow();
 });
 
-test('Queue objects from data1 should pass into data2', () => {
-  const q = new PseudoQueue();
-  q.enqueue(10);
-  q.enqueue(15);
-  q.enqueue(20);
-  q.enqueue(5);
-  expect(q.dequeue()).toEqual(10);
+test('Order of elements is maintained when dequeue is instantiated following a FIFO approach', () => {
+  const s = new PseudoQueue();
+  s.enqueue(5);
+  s.enqueue(10);
+  s.enqueue(15);
+  s.enqueue(20)
+  expect(s.dequeue()).toEqual(5);
+  expect(s.dequeue()).toEqual(10);
+  expect(s.dequeue()).toEqual(15);
+  expect(s.dequeue()).toEqual(20);
+  expect(s.dequeue()).toEqual('Empty Queue');
 });
+
+test('Dequeue an empty queue should raise an exception', () => {
+  const s1 = new PseudoQueue();
+
+  expect(s1.dequeue()).toEqual('Empty Queue');
+})
