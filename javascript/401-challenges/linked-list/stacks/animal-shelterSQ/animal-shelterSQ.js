@@ -1,10 +1,4 @@
-const { Queue } = require('../QueueStacks/linkedListsQueue.js');
-
-// class Animal {
-//   constructor(type) {
-//     this.type = type;
-//   }
-// }
+const { Queue } = require('../QueueStacks/stacksAndQueues.js');
 
 class AnimalShelter {
   constructor(){
@@ -13,52 +7,30 @@ class AnimalShelter {
   }
 
   enqueue(animal) {
-    if(animal.type === 'dog'){
+    if(animal.type === 'Dog'){
       this.dog.enqueue(animal);
       return this.dog;
-    } else if(animal.type === 'cat'){
+    } else if(animal.type === 'Cat'){
       this.cat.enqueue(animal);
       return this.cat;
     } else {
-      console.error ('We are over capacity');
+      console.error ('Sorry, we cant take them');
     }
   }
 
-  dequeue(pref) {
-    if(pref.type === 'dog') {
-      this.dog.dequeue(pref);
+  dequeue(preference) {
+    if(preference.type === 'Dog') {
+      this.dog.dequeue(preference);
       return this.dog;
-    } else if(pref.type === 'cat') {
-      this.cat.dequeue(pref);
-    } else if (!pref.type === 'cat'){
+    } else if(preference.type === 'Cat') {
+      this.cat.dequeue(preference);
+    } else if (!preference.type === 'Cat'){
       return null;
-    } else if (!pref.type === 'dog'){
+    } else if (!preference.type === 'Dog'){
       return null;
     }
   }
 }
-
-// let animals = new AnimalShelter();
-
-// animals.enqueue({type:'dog'});
-// animals.enqueue({type:'dog'});
-// animals.enqueue({type:'dog'});
-// animals.enqueue({type:'dog'});
-// animals.enqueue({type:'pig'});
-// animals.enqueue({type:'dog'});
-// animals.enqueue({type:'cat'});
-// animals.enqueue({type:'cat'});
-// animals.enqueue({type:'cat'});
-// animals.enqueue({type:'dog'});
-// animals.dequeue({type:'dog'});
-// animals.dequeue({type:'dog'});
-// animals.dequeue({type:'dog'});
-// animals.dequeue({type:'dog'});
-// animals.dequeue({type:'dog'});
-// animals.dequeue({type:'dog'});
-
-// console.log(animals.dog, animals.cat);
-
 
 
 module.exports = AnimalShelter;
