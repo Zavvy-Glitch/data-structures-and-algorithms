@@ -9,7 +9,7 @@ class Node {
 }
 
 
-class BinarySearch {
+class BinaryTree {
   constructor() {
     this.root = null;
   }
@@ -137,8 +137,7 @@ class BinarySearch {
 
 }
 
-
-const treeNode = new BinarySearch();
+const treeNode = new BinaryTree();
 treeNode.add(22);
 treeNode.add(12);
 treeNode.add(30);
@@ -165,4 +164,4 @@ treeNode.postOrder(root);
 console.log('************** Max Value is', treeNode.findMax(root));
 
 
-module.exports = { BinarySearch, Node };
+module.exports = { BinaryTree, Node };
