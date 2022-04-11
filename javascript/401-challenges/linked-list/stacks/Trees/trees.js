@@ -137,31 +137,30 @@ class BinaryTree {
 
 }
 
-const treeNode = new BinaryTree();
-treeNode.add(22);
-treeNode.add(12);
-treeNode.add(30);
-treeNode.add(16);
-treeNode.add(9);
-treeNode.add(10);
-treeNode.add(45);
-treeNode.add(20);
-treeNode.add(80);
-treeNode.add(11);
-treeNode.add(73);
-treeNode.add(8);
+// const treeNode = new BinaryTree();
+// treeNode.add(22);
+// treeNode.add(12);
+// treeNode.add(30);
+// treeNode.add(16);
+// treeNode.add(9);
+// treeNode.add(10);
+// treeNode.add(45);
+// treeNode.add(20);
+// treeNode.add(80);
+// treeNode.add(11);
+// treeNode.add(73);
+// treeNode.add(8);
 
 
-const root = treeNode.getRootNode();
-// console.log(treeNode);
+// const root = treeNode.getRootNode();
 
-console.log('********In-Order Traversal********');
-treeNode.inOrder(root);
-console.log('********Pre-Order Traversal********');
-treeNode.preOrder(root);
-console.log('********Post-Order Traversal********');
-treeNode.postOrder(root);
-console.log('************** Max Value is', treeNode.findMax(root));
+// console.log('********In-Order Traversal********');
+// treeNode.inOrder(root);
+// console.log('********Pre-Order Traversal********');
+// treeNode.preOrder(root);
+// console.log('********Post-Order Traversal********');
+// treeNode.postOrder(root);
+// console.log('************** Max Value is', treeNode.findMax(root));
 
 
 module.exports = { BinaryTree, Node };
