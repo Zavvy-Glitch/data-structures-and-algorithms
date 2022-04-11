@@ -42,11 +42,11 @@ test('Can successfully return a collection from a preorder traversal', () => {
   n.add(49);
   n.add(65);
 
-  const root = n.getRootNode()
-  
-  console.log('-----------------', n.postOrder(root))
+  const root = n.getRootNode();
 
-  expect().toEqual();
+  expect(() => {
+    n.preOrder(root);
+  }) .not.toThrow();;
 });
 
 test('Can successfully return a collection from an inorder traversal', () => {
@@ -60,8 +60,18 @@ test('Can successfully return a collection from a postorder traversal', () => {
 });
 
 test('Can successfully return Max Value', () => {
-  expect(() => {
-  }) .not.toThrow();
+  const n = new BinaryTree();
+
+  n.add(20);
+  n.add(25);
+  n.add(35);
+  n.add(49);
+  n.add(65);
+
+  const root = n.getRootNode();
+  
+  expect(n.findMax(root)).toEqual(65);
+
 });
 
 test('Can successfully return Min Value', () => {

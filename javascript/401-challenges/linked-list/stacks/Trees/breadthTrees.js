@@ -1,8 +1,5 @@
 'use strict';
 
-const { Queue } = require('../QueueStacks/stacksAndQueues.js');
-
-
 class Node {
   constructor(value, k =0) {
     this.value = value;
