@@ -124,6 +124,19 @@ class BinaryTree {
     }
   }
 
+  breadthFirst(node) {
+    let result = [];
+    let current = node;
+    const array = [current];
+    while(array.length) {
+      current = array.pop();
+      result.push(current.data);
+      if (current.left) array.unshift(current.left);
+      if(current.right) array.unshift(current.right);
+      }
+      return result;
+    }
+
   contains(node, data){
     if(node === null)
       return null;
@@ -137,13 +150,13 @@ class BinaryTree {
 
 }
 
-// const treeNode = new BinaryTree();
-// treeNode.add(22);
-// treeNode.add(12);
-// treeNode.add(30);
-// treeNode.add(16);
-// treeNode.add(9);
-// treeNode.add(10);
+const treeNode = new BinaryTree();
+treeNode.add(22);
+treeNode.add(12);
+treeNode.add(30);
+treeNode.add(16);
+treeNode.add(9);
+treeNode.add(10);
 // treeNode.add(45);
 // treeNode.add(20);
 // treeNode.add(80);
@@ -152,7 +165,9 @@ class BinaryTree {
 // treeNode.add(8);
 
 
-// const root = treeNode.getRootNode();
+const root = treeNode.getRootNode();
+
+console.log('---------------------------', treeNode)
 
 // console.log('********In-Order Traversal********');
 // treeNode.inOrder(root);
@@ -160,7 +175,8 @@ class BinaryTree {
 // treeNode.preOrder(root);
 // console.log('********Post-Order Traversal********');
 // treeNode.postOrder(root);
-// console.log('************** Max Value is', treeNode.findMax(root));
+// console.log('**************Max Value is', treeNode.findMax(root));
+console.log('******Breadth First Traversal******', treeNode.breadthFirst(root));
 
 
 module.exports = { BinaryTree, Node };
