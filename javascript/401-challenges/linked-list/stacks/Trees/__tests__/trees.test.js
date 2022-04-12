@@ -46,16 +46,38 @@ test('Can successfully return a collection from a preorder traversal', () => {
 
   expect(() => {
     n.preOrder(root);
-  }) .not.toThrow();;
+  }) .not.toThrow();
 });
 
-test('Can successfully return a collection from an inorder traversal', () => {
+test('Can successfully return a collection from an inOrder traversal', () => {
+  const n = new BinaryTree();
+
+  n.add(20);
+  n.add(25);
+  n.add(35);
+  n.add(49);
+  n.add(65);
+
+  const root = n.getRootNode();
+
   expect(() => {
+    n.inOrder(root);
   }) .not.toThrow();
 });
 
 test('Can successfully return a collection from a postorder traversal', () => {
+  const n = new BinaryTree();
+
+  n.add(20);
+  n.add(25);
+  n.add(35);
+  n.add(49);
+  n.add(65);
+
+  const root = n.getRootNode();
+
   expect(() => {
+    n.postOrder(root);
   }) .not.toThrow();
 });
 
@@ -74,7 +96,19 @@ test('Can successfully return Max Value', () => {
 
 });
 
-test('Can successfully return Min Value', () => {
-  expect(() => {
-  }) .not.toThrow();
+test('Can return an array of nodes ensuring Breadth First construction', () => {
+  const n = new BinaryTree();
+
+  n.add(20);
+  n.add(25);
+  n.add(35);
+  n.add(49);
+  n.add(65);
+
+  const root = n.getRootNode();
+
+  let result = n.breadthFirst(root);
+  console.log(result)
+
+  expect(result).toEqual([20, 25, 35, 49, 65]);
 });
