@@ -36,6 +36,8 @@
   - Return: list of all values in the tree, in the order they were encountered
     - NOTE: Traverse the input tree using a Breadth-first approach
 
+![breadthFirstBST](https://user-images.githubusercontent.com/84699682/163062775-f548ff97-ec6c-4f9b-9227-a69d071263d6.jpg)
+
 - Write a function called fizz buzz tree
   - Arguments: k-ary tree
   - Return: new k-ary tree
