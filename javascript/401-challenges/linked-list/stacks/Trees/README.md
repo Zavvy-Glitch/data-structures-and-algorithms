@@ -1,6 +1,4 @@
-# Challenge Summary
-
-## Feature Tasks
+## Features
 
 - Node
   - Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
@@ -48,6 +46,8 @@
       - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
       - If the value is not divisible by 3 or 5, simply turn the number into a String.
 
+![breadthFirstKary](https://user-images.githubusercontent.com/84699682/163286754-579a44a7-e6ac-4848-97a7-24248f6e443c.jpg)
+
 ## Structure and Testing
 
 - Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. You will be given feedback and marked down if you attempt to define a large, complex algorithm in one function definition.
@@ -70,6 +70,4 @@
     - Can replace a value with `FizzBuzz` if value is divisible by 3 & 5
     - If the value is not divisible by 3 nor 5, return the value as a string
 
-    ![breadthTrees](images/breadthFirst.jpg)
-
-    Contributions(Stefanie Riehle, Alex Grazda)
+    Contributions(Stefanie Riehle, Alex Grazda, Tee Brown)
