@@ -139,29 +139,29 @@ class BinaryTree {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////// BINARY TREE ///////////////////////////////
-// const treeNode = new BinaryTree();
-// treeNode.add(22);
-// treeNode.add(12);
-// treeNode.add(30);
-// treeNode.add(16);
-// treeNode.add(9);
-// treeNode.add(10);
-// treeNode.add(45);
-// treeNode.add(20);
-// treeNode.add(80);
-// treeNode.add(11);
-// treeNode.add(73);
-// treeNode.add(8);
+const treeNode = new BinaryTree();
+treeNode.add(22);
+treeNode.add(12);
+treeNode.add(30);
+treeNode.add(16);
+treeNode.add(9);
+treeNode.add(10);
+treeNode.add(45);
+treeNode.add(20);
+treeNode.add(80);
+treeNode.add(11);
+treeNode.add(73);
+treeNode.add(8);
 
-// const root = treeNode.getRootNode();
-// console.log('********In-Order Traversal********');
-// treeNode.inOrder(root);
-// console.log('********Pre-Order Traversal********');
-// treeNode.preOrder(root);
-// console.log('********Post-Order Traversal********');
-// treeNode.postOrder(root);
-// console.log('**************Max Value is', treeNode.findMax(root));
-// console.log('******Breadth First Traversal******', treeNode.breadthFirst(root));
+const root = treeNode.getRootNode();
+console.log('********In-Order Traversal********');
+treeNode.inOrder(root);
+console.log('********Pre-Order Traversal********');
+treeNode.preOrder(root);
+console.log('********Post-Order Traversal********');
+treeNode.postOrder(root);
+console.log('**************Max Value is', treeNode.findMax(root));
+console.log('******BinaryTree Breadth First Traversal******', treeNode.breadthFirst(root));
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////Kary Tree///////////////////////////////////////////////////////
@@ -214,7 +214,7 @@ node.root.children[0].children[0].children.push(new Node(60), new Node(72), new 
 node.root.children[1].children[0].children.push(new Node(38), new Node (10), new Node(9));
 node.root.children[2].children[0].children.push(new Node(45), new Node(91), new Node(96));
 
-console.log(breadthFirst(node.root));
-console.log(fizzBuzz(breadthFirst(node.root)));
+console.log('*********KaryTree Breadth First Traversal**************',breadthFirst(node.root));
+console.log('*********FiZZBuZZ**************',fizzBuzz(breadthFirst(node.root)));
 
 module.exports = { BinaryTree, KaryTree, Node };
