@@ -192,9 +192,8 @@ function breadthFirst(root) {
 
 function fizzBuzz(node) {
   let result = [];
-  let i;
 
-  for (i = 0; i < node.length; i++) {
+  for (let i = 0; i < node.length; i++) {
     if (node[i] % 15 === 0) result.push("FizzBuzz");
     else if (node[i] % 3 === 0) result.push("Fizz");
     else if (node[i] % 5 === 0) result.push("Buzz");
