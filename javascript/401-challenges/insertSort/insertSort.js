@@ -36,4 +36,4 @@ insertSort(arr);
 selectionSort(arr);
 console.log(arr);
 
-module.exports = { insertSort };
+module.exports = { insertSort, selectionSort };
