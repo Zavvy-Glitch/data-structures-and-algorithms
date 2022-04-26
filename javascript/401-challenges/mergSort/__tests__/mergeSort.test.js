@@ -9,7 +9,11 @@ describe('Testing mergeSort Function', () => {
     let newArray = [4,8,15,16,23,42];
     expect(newArray).toEqual(mergeSort(arr));
   });
-});
 
+  it('should return the original array if array length is equal to or less than 1', () => {
+    let arr = [1];
+    expect(arr).toEqual(mergeSort(arr));
+  })
+});
 
 
