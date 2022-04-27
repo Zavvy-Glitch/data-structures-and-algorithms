@@ -40,7 +40,7 @@ function quickSort(arr, left, right) {
   return arr;
 }
 
-let arr = [8, 4, 23, 42, 16, 15];
+let arr = [8, 4, 23, 42, 16, 15, 19, 81, 26, 54];
 
 let sortArr = quickSort(arr, 0, arr.length-1);
 console.log(sortArr);
