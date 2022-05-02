@@ -45,22 +45,24 @@ class HashTable {
   }
 
   contains(key) {
-    let hash = this.hash(key);
-    if (
-      this.values.hasOwnProperty(hash) &&
-      this.values[hash].hasOwnProperty(key)
-    ) {
+    let position = this.hash(key);
+    if (this.bucket[position]) {
+      console.log('Key Exists');
       return true;
     } else {
+      console.log('Key Does Not Exists');
       return false;
     }
   }
 }
 
-let table = new HashTable(1024);
-console.log(table);
-table.set("Barbara", "324-662-8749");
-table.set("Benjamin", {lastName: "Aldrich"});
-console.log("HERE =>:", table)
-console.log('Barbara', table.get("Barbara"))
-console.log('Benjamin', table.get("Benjamin"));
+module.exports = HashTable
+
+// let table = new HashTable(1024);
+// console.log(table);
+// table.set("Barbara", "324-662-8749");
+// table.set("Benjamin", {lastName: "Aldrich"});
+// console.log("HERE =>:", table)
+// console.log('Barbara', table.get("Barbara"))
+// console.log('Benjamin', table.get("Benjamin"));
+// console.log('Bobby', table.contains("Bobby"))
