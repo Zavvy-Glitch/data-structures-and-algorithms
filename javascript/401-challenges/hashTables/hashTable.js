@@ -1,106 +1,66 @@
-'use strict';
+"use strict";
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
-
-class LinkedList {
-  constructor() {
-    this.head = null;
-  }
-  append(val) {
-    const node = new Node(val);
-    if(!this.head) {
-      this.head = node;
-      return;
-    }
-
-    let current = this.head;
-    while(current.next) {
-      current = current.next;
-    }
-    current.next = node;
-  }
-
-  values() {
-    let values = [];
-    let current = this.head;
-    while(current) {
-      values.push(current.value);
-      current = current.next;
-    }
-    return values;
-  }
-}
+const LinkedList = require("./linkedList");
 
 class HashTable {
   constructor(size) {
     this.size = size;
-    this.map = new Array(size);
+    this.bucket = new Array(size);
   }
+
   hash(key) {
-    let sum = 0;
-    for(let i = 0; i < key.length; i++) {
-      sum += key.charCodeAt(i);
-    }
-    return (sum * 599) % this.size;
+    let characters = key.split("");
+    let ascii = characters.reduce((sum, char) => {
+      return sum + char.charCodeAt(0);
+    }, 0);
+
+    let initHash = ascii * 599;
+
+    return initHash % 1024;
   }
 
-  add(key, value) {
-    let index = this.hash(key);
+  set(key, value) {
+    const position = this.hash(key);
+    const data = { [key]: value };
 
-    let bucket = this.map[index];
-    let payload = {
-      [key]: value
-    };
-
-    if (bucket){
-      bucket.append(payload);
+    if (this.bucket[position]) {
+      let bucket = this.bucket[position];
+      bucket.add(data);
     } else {
-      let list = new LinkedList();
-      list.append(payload);
-      this.map[index] = list;
+      let bucket = new LinkedList();
+
+      bucket.add(data);
+      this.bucket[position] = bucket;
     }
   }
 
-  get(key){
-    let index = this.hash(key);
-    console.log(index);
-    return index;
+  get(key) {
+    const position = this.hash(key);
 
+    if (this.bucket[position]) {
+      let bucket = this.bucket[position];
+      let value = bucket.head.value[key];
+      return value;
+    }
   }
 
-  // contains(key){
-  //   let hash = this.hash(key);
-  //   if (this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)){
-  //     return true;
-  //   } else{
-  //     return false;
-  //   }
-
-  // }
-
-  repeatedWord(array){
-    let words = array.split(' '),
-      wordMap = {};
-    for(let i = 0; i < words.length; i++){
-      let currentWordCount = wordMap[words[i]];
-      let count = currentWordCount ? currentWordCount : 0;
-      wordMap[words[i]] = count + 1;
+  contains(key) {
+    let hash = this.hash(key);
+    if (
+      this.values.hasOwnProperty(hash) &&
+      this.values[hash].hasOwnProperty(key)
+    ) {
+      return true;
+    } else {
+      return false;
     }
-    return wordMap;
   }
 }
 
-let map = new HashTable(1024);
-console.log(map.hash('Random'));
-
-map.add('Random', 'title');
-console.log(map.map[247]);
-
-
-let array = 'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...';
-console.log(map.repeatedWord(array));
+let table = new HashTable(1024);
+console.log(table);
+table.set("Barbara", "324-662-8749");
+table.set("Benjamin", {lastName: "Aldrich"});
+console.log("HERE =>:", table)
+console.log('Barbara', table.get("Barbara"))
+console.log('Benjamin', table.get("Benjamin"));
