@@ -60,6 +60,6 @@ list2.add(4);
 list2.add(500);
 
 
-// console.log(tree_intersection(list1, list2));
+console.log(tree_intersection(list1, list2));
 
 module.exports = tree_intersection
