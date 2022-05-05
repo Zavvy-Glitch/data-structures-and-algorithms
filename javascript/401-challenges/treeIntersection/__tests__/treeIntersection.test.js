@@ -1,7 +1,6 @@
 'use strict';
 
 const { BinaryTree } = require('../../trees/trees.js');
-// const HashTable = require('../../hashTables/hashTable.js');
 const tree_intersection = require('../tree-intersection.js');
 
 
