@@ -35,12 +35,26 @@ describe('Testing the functionality of Graphs Methods', () => {
   })
 
   test('Neighbors are returned with the weight between nodes included', () => {
+    const A = graph.addVertex('A');
+    const B = graph.addVertex('B');
 
+    graph.addDirectEdge(A, B);
+
+    let newEdge = graph.getNeighbors(A)
+    
+    expect(newEdge).toEqual([{"vertex": {"value": "B"}, "weight": 0}])
   })
 
   test('The proper size is returned, representing the number of nodes in the graph', () => {
+    const A = graph.addVertex('A');
+    const B = graph.addVertex('B');
+    graph.addDirectEdge(A, B);
 
+    let graphSize = graph.size();
+
+    expect(graphSize).toEqual(7)
   })
+
 
   test('A graph with only one node and edge can be properly returned', () => {
 
