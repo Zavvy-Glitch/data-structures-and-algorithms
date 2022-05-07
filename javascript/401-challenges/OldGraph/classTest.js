@@ -42,7 +42,7 @@ class Graph {
       throw new Error("Vertex Error");
     }
 
-    // what should do to add them to our adjacency values?
+    // what should we do to add them to our adjacency values?
 
     // grab all edges connected to the starting vertex
     let neighbors = this.adjacencyList.get(startVertex);
@@ -57,7 +57,7 @@ class Graph {
       throw new Error("GET NEIGHBOR ERROR :: Invalid vertex");
     }
 
-    // I don't want mutate this array
+    // I don't want to mutate this array
     return [...this.adjacencyList.get(vertex)];
   }
 
