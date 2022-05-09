@@ -99,34 +99,41 @@ class Graph {
 
 const graph = new Graph();
 
-const A = graph.addVertex('A');
-const B = graph.addVertex('B');
-const C = graph.addVertex('C')
-const D = graph.addVertex('D')
-const E = graph.addVertex('E')
-const F = graph.addVertex('F')
-const G = graph.addVertex('G')
-const H = graph.addVertex('H')
+const Pandora = graph.addVertex('Pandora');
+const Arendelle = graph.addVertex('Arendelle');
+const Metroville = graph.addVertex('Metroville')
+const Monstropolis = graph.addVertex('Monstropolis')
+const Narnia = graph.addVertex('Narnia')
+const Naboo = graph.addVertex('Naboo')
 
 
-graph.addDirectEdge(A, B);
-graph.addDirectEdge(A, D);
-graph.addDirectEdge(A, C);
-graph.addDirectEdge(B, G)
-graph.addDirectEdge(D, F)
-graph.addDirectEdge(H, D)
-graph.addDirectEdge(C, H)
-graph.addDirectEdge(F, H)
-graph.addDirectEdge(F, E)
+
+graph.addDirectEdge(Pandora, Arendelle);
+graph.addDirectEdge(Arendelle, Pandora);
+graph.addDirectEdge(Arendelle, Metroville);
+graph.addDirectEdge(Arendelle, Monstropolis);
+graph.addDirectEdge(Metroville, Arendelle)
+graph.addDirectEdge(Metroville, Monstropolis);
+graph.addDirectEdge(Metroville, Naboo);
+graph.addDirectEdge(Metroville, Narnia);
+graph.addDirectEdge(Monstropolis, Arendelle);
+graph.addDirectEdge(Monstropolis, Metroville);
+graph.addDirectEdge(Monstropolis, Naboo);
+graph.addDirectEdge(Naboo, Monstropolis);
+graph.addDirectEdge(Naboo, Metroville);
+graph.addDirectEdge(Naboo, Narnia);
+graph.addDirectEdge(Narnia, Metroville)
+graph.addDirectEdge(Narnia, Naboo)
+
 
 // console.log(graph.adjList)
 // console.log('*****************DFT**************************')
-// graph.depthFirst(A, console.log)
+// graph.depthFirst(Pandora, console.log)
 // console.log('******************BFT**************************')
-// graph.breadthFirst(A, console.log)
-// console.log('***************Vertices************************')
-// console.log(graph.getVertices());
-// console.log(graph.getNeighbors(A));
-// console.log(graph.size());
+// graph.breadthFirst(Pandora, console.log)
+// console.log('***************************************')
+// console.log('Graphs Vertices: ', graph.getVertices());
+// console.log(`Neighbors of ${Arendelle.value}`, graph.getNeighbors(Arendelle));
+// console.log('Size of Graph: ',graph.size());
 
 module.exports = {Graph, Vertex, Edge}
