@@ -4,8 +4,6 @@ const { Graph } = require('../graph.js')
 
 describe('Testing the functionality of Graphs Methods', () => {
 
-  
-  
   test('Node can be successfully added to the graph', () => {
     const graph = new Graph();
     const A = graph.addVertex('A');
