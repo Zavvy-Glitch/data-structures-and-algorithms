@@ -27,7 +27,7 @@ class Graph {
   }
 
   addDirectEdge(startVertex, endVertex, weight) {
-    const neighbors = this.adjList.get(startVertex, weight);
+    const neighbors = this.adjList.get(startVertex);
     neighbors.push(new Edge(endVertex, weight));
   }
 
