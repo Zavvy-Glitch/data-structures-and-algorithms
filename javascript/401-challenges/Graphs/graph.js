@@ -26,9 +26,9 @@ class Graph {
     return vertex;
   }
 
-  addDirectEdge(startVertex, endVertex) {
-    const neighbors = this.adjList.get(startVertex);
-    neighbors.push(new Edge(endVertex));
+  addDirectEdge(startVertex, endVertex, weight) {
+    const neighbors = this.adjList.get(startVertex, weight);
+    neighbors.push(new Edge(endVertex, weight));
   }
 
   getNeighbors(vertex) {
@@ -108,14 +108,14 @@ const Naboo = graph.addVertex('Naboo')
 
 
 
-graph.addDirectEdge(Pandora, Arendelle);
+graph.addDirectEdge(Pandora, Arendelle, 150);
 graph.addDirectEdge(Arendelle, Pandora);
-graph.addDirectEdge(Arendelle, Metroville);
-graph.addDirectEdge(Arendelle, Monstropolis);
+graph.addDirectEdge(Arendelle, Metroville, 99);
+graph.addDirectEdge(Arendelle, Monstropolis, 42);
 graph.addDirectEdge(Metroville, Arendelle)
-graph.addDirectEdge(Metroville, Monstropolis);
-graph.addDirectEdge(Metroville, Naboo);
-graph.addDirectEdge(Metroville, Narnia);
+graph.addDirectEdge(Metroville, Monstropolis, 105);
+graph.addDirectEdge(Metroville, Naboo, 26);
+graph.addDirectEdge(Metroville, Narnia, 37);
 graph.addDirectEdge(Monstropolis, Arendelle);
 graph.addDirectEdge(Monstropolis, Metroville);
 graph.addDirectEdge(Monstropolis, Naboo);
