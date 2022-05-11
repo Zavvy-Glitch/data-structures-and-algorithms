@@ -30,7 +30,7 @@ describe('Testing the functionality of Graphs Methods', () => {
     graph.addDirectEdge(A, B);
 
     let nodes = graph.getVertices();
-    expect(console.log(nodes)).toEqual()
+    expect(console.log('Collection',nodes)).toEqual()
   })
 
   test('All appropriate neighbors can be retrieved from the graph', () => {
@@ -88,7 +88,29 @@ describe('Testing the functionality of Graphs Methods', () => {
 
     let results = graph.breadthFirst(Pandora);
 
-    expect(console.log(results)).toEqual()
+    expect(console.log('BreadthFirst',results)).toEqual()
+
+  })
+  test('A Depth First Traversal should return the proper order', () => {
+    const graph = new Graph;
+
+    const Arendelle = graph.addVertex('Arendelle');
+    const Pandora = graph.addVertex('Pandora');
+    const Metroville = graph.addVertex('Metroville');
+    const Monstropolis = graph.addVertex('Monstropolis');
+
+    graph.addDirectEdge(Pandora, Arendelle);
+    graph.addDirectEdge(Arendelle, Pandora);
+    graph.addDirectEdge(Arendelle, Metroville);
+    graph.addDirectEdge(Arendelle, Monstropolis);
+    graph.addDirectEdge(Metroville, Arendelle);
+    graph.addDirectEdge(Metroville, Monstropolis);
+    graph.addDirectEdge(Monstropolis, Metroville);
+    graph.addDirectEdge(Monstropolis, Arendelle);
+
+    let results = graph.depthFirst(Pandora);
+
+    expect(console.log('DepthFirst', results)).toEqual()
 
   })
 })
