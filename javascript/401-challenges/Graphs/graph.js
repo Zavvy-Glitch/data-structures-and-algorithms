@@ -126,14 +126,14 @@ graph.addDirectEdge(Narnia, Metroville)
 graph.addDirectEdge(Narnia, Naboo)
 
 
-// console.log(graph.adjList)
-// console.log('*****************DFT**************************')
-// graph.depthFirst(Pandora, console.log)
-// console.log('******************BFT**************************')
-// graph.breadthFirst(Pandora, console.log)
-// console.log('***************************************')
-// console.log('Graphs Vertices: ', graph.getVertices());
-// console.log(`Neighbors of ${Arendelle.value}`, graph.getNeighbors(Arendelle));
-// console.log('Size of Graph: ',graph.size());
+console.log(graph.adjList)
+console.log('*****************DFT**************************')
+graph.depthFirst(Pandora, console.log)
+console.log('******************BFT**************************')
+graph.breadthFirst(Pandora, console.log)
+console.log('***************************************')
+console.log('Graphs Vertices: ', graph.getVertices());
+console.log(`Neighbors of ${Arendelle.value}`, graph.getNeighbors(Arendelle));
+console.log('Size of Graph: ',graph.size());
 
 module.exports = {Graph, Vertex, Edge}
